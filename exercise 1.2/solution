@@ -1,1 +1,28 @@
+baffa@LAPTOP-LLN9LO7E:~$ docker system prune
+WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all dangling images
+  - all dangling build cache
 
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+f3bac36064ba3ef262017ffdab08f503848f2eb17a436c4c254fccd2caa2c467
+
+Total reclaimed space: 1.093kB
+baffa@LAPTOP-LLN9LO7E:~$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+baffa@LAPTOP-LLN9LO7E:~$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED      SIZE
+nginx        latest    dd34e67e3371   2 days ago   133MB
+baffa@LAPTOP-LLN9LO7E:~$ docker image prune
+WARNING! This will remove all dangling images.
+Are you sure you want to continue? [y/N] y
+Total reclaimed space: 0B
+baffa@LAPTOP-LLN9LO7E:~$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED      SIZE
+nginx        latest    dd34e67e3371   2 days ago   133MB
+baffa@LAPTOP-LLN9LO7E:~$ docker image ls
+REPOSITORY   TAG       IMAGE ID       CREATED      SIZE
+nginx        latest    dd34e67e3371   2 days ago   133MB
+baffa@LAPTOP-LLN9LO7E:~$
