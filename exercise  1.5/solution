@@ -1,1 +1,218 @@
+baffa@LAPTOP-LLN9LO7E:~$ docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED        SIZE
+ubuntu                              latest    1318b700e415   3 weeks ago    72.8MB
+fav_distro                          bionic    39a8cfeef173   3 weeks ago    63.1MB
+ubuntu                              18.04     39a8cfeef173   3 weeks ago    63.1MB
+ubuntu                              bionic    39a8cfeef173   3 weeks ago    63.1MB
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   5 months ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   5 months ago   15.7MB
+baffa@LAPTOP-LLN9LO7E:~$ docker rmi fd
+Untagged: devopsdockeruh/simple-web-service:alpine
+Untagged: devopsdockeruh/simple-web-service@sha256:dd4d367476f86b7d7579d3379fe446ae5dfce25480903fb0966fc2e5257e0543
+Deleted: sha256:fd312adc88e08116713c2c47a0581b19987c35781ded55e1601a6e592b93cff8
+Deleted: sha256:42a65c67f72a6bde32c78039c7ea98ef8929000c170fb34a74f2daed3bc630fd
+Deleted: sha256:08f80b80c57e445125b1c1686f2bff2bcdd453aaf1bb0526939cc2201c4701e6
+Deleted: sha256:cb381a32b2296e4eb5af3f84092a2e6685e88adbc54ee0768a1a1010ce6376c7
+baffa@LAPTOP-LLN9LO7E:~$ docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED        SIZE
+ubuntu                              latest    1318b700e415   3 weeks ago    72.8MB
+fav_distro                          bionic    39a8cfeef173   3 weeks ago    63.1MB
+ubuntu                              18.04     39a8cfeef173   3 weeks ago    63.1MB
+ubuntu                              bionic    39a8cfeef173   3 weeks ago    63.1MB
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   5 months ago   83MB
+baffa@LAPTOP-LLN9LO7E:~$ docker pull devopsdockeruh/simple-web-service:alpine
+alpine: Pulling from devopsdockeruh/simple-web-service
+ba3557a56b15: Pull complete
+1dace236434b: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:dd4d367476f86b7d7579d3379fe446ae5dfce25480903fb0966fc2e5257e0543
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:alpine
+docker.io/devopsdockeruh/simple-web-service:alpine
+baffa@LAPTOP-LLN9LO7E:~$ docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED        SIZE
+ubuntu                              latest    1318b700e415   3 weeks ago    72.8MB
+fav_distro                          bionic    39a8cfeef173   3 weeks ago    63.1MB
+ubuntu                              18.04     39a8cfeef173   3 weeks ago    63.1MB
+ubuntu                              bionic    39a8cfeef173   3 weeks ago    63.1MB
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   5 months ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   5 months ago   15.7MB
+baffa@LAPTOP-LLN9LO7E:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+baffa@LAPTOP-LLN9LO7E:~$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS                        PORTS     NAMES
+ae7c80b3957e   ubuntu    "bash"    24 minutes ago   Exited (129) 24 minutes ago             suspicious_lewin
+319011d73587   ubuntu    "bash"    34 minutes ago   Exited (0) 24 minutes ago               elegant_liskov
+40365b191e4d   ubuntu    "bash"    42 minutes ago   Exited (129) 38 minutes ago             musing_ptolemy
+baffa@LAPTOP-LLN9LO7E:~$ docker run alpine
+Unable to find image 'alpine:latest' locally
+latest: Pulling from library/alpine
+29291e31a76a: Pull complete
+Digest: sha256:eb3e4e175ba6d212ba1d6e04fc0782916c08e1c9d7b45892e9796141b1d379ae
+Status: Downloaded newer image for alpine:latest
+baffa@LAPTOP-LLN9LO7E:~$ docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED        SIZE
+alpine                              latest    021b3423115f   13 days ago    5.6MB
+ubuntu                              latest    1318b700e415   3 weeks ago    72.8MB
+fav_distro                          bionic    39a8cfeef173   3 weeks ago    63.1MB
+ubuntu                              18.04     39a8cfeef173   3 weeks ago    63.1MB
+ubuntu                              bionic    39a8cfeef173   3 weeks ago    63.1MB
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   5 months ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   5 months ago   15.7MB
+baffa@LAPTOP-LLN9LO7E:~$ docker rmi alpine
+Error response from daemon: conflict: unable to remove repository reference "alpine" (must force) - container ce5574aae923 is using its referenced image 021b3423115f
+baffa@LAPTOP-LLN9LO7E:~$ docker rmi --force alpine
+Untagged: alpine:latest
+Untagged: alpine@sha256:eb3e4e175ba6d212ba1d6e04fc0782916c08e1c9d7b45892e9796141b1d379ae
+Deleted: sha256:021b3423115ff662225e83d7e2606475217de7b55fde83ce3447a54019a77aa2
+baffa@LAPTOP-LLN9LO7E:~$ docker exec alpine
+"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
 
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Run a command in a running container
+baffa@LAPTOP-LLN9LO7E:~$ docker exec -it alpine sh
+Error: No such container: alpine
+baffa@LAPTOP-LLN9LO7E:~$ docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED        SIZE
+ubuntu                              latest    1318b700e415   3 weeks ago    72.8MB
+fav_distro                          bionic    39a8cfeef173   3 weeks ago    63.1MB
+ubuntu                              18.04     39a8cfeef173   3 weeks ago    63.1MB
+ubuntu                              bionic    39a8cfeef173   3 weeks ago    63.1MB
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   5 months ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   5 months ago   15.7MB
+baffa@LAPTOP-LLN9LO7E:~$ docker run -it alpine
+Unable to find image 'alpine:latest' locally
+latest: Pulling from library/alpine
+29291e31a76a: Already exists
+Digest: sha256:eb3e4e175ba6d212ba1d6e04fc0782916c08e1c9d7b45892e9796141b1d379ae
+Status: Downloaded newer image for alpine:latest
+/ # exit
+baffa@LAPTOP-LLN9LO7E:~$ docker images
+REPOSITORY                          TAG       IMAGE ID       CREATED        SIZE
+alpine                              latest    021b3423115f   13 days ago    5.6MB
+ubuntu                              latest    1318b700e415   3 weeks ago    72.8MB
+fav_distro                          bionic    39a8cfeef173   3 weeks ago    63.1MB
+ubuntu                              18.04     39a8cfeef173   3 weeks ago    63.1MB
+ubuntu                              bionic    39a8cfeef173   3 weeks ago    63.1MB
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   5 months ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   5 months ago   15.7MB
+baffa@LAPTOP-LLN9LO7E:~$ docker rmi --force alpine
+Untagged: alpine:latest
+Untagged: alpine@sha256:eb3e4e175ba6d212ba1d6e04fc0782916c08e1c9d7b45892e9796141b1d379ae
+Deleted: sha256:021b3423115ff662225e83d7e2606475217de7b55fde83ce3447a54019a77aa2
+baffa@LAPTOP-LLN9LO7E:~$ docker run fd -it
+
+
+                The application accepts 1 argument "server". Use the argument server to run the server
+
+                If no arguments are supplied the application will output log strings to a file.
+
+
+Arguments given: -it
+baffa@LAPTOP-LLN9LO7E:~$ docker run fd312adc88e0 -it
+
+
+                The application accepts 1 argument "server". Use the argument server to run the server
+
+                If no arguments are supplied the application will output log strings to a file.
+
+
+Arguments given: -it
+baffa@LAPTOP-LLN9LO7E:~$ docker run -it fd312adc88e0
+Starting log output
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+^Cbaffa@LAPTOP-LLN9LO7E:~$ docker run -it -d fd312adc88e0
+4ea74f44c67ddd08faac3023a9f4df7934f65db7607c04d5a561acafcedf1122
+baffa@LAPTOP-LLN9LO7E:~$ docker exec fd312adc88e0/sh
+"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Run a command in a running container
+baffa@LAPTOP-LLN9LO7E:~$ docker exec fd312adc88e0/sh
+"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Run a command in a running container
+baffa@LAPTOP-LLN9LO7E:~$ docker ps
+CONTAINER ID   IMAGE          COMMAND                 CREATED              STATUS              PORTS     NAMES
+4ea74f44c67d   fd312adc88e0   "/usr/src/app/server"   About a minute ago   Up About a minute             admiring_kowalevski
+baffa@LAPTOP-LLN9LO7E:~$ docker exec -it admiring_kowalevski
+"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Run a command in a running container
+baffa@LAPTOP-LLN9LO7E:~$ docker attach admiring_kowalevski
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+^Cbaffa@LAPTOP-LLN9LO7E:~$ docker exec -it admiring_kowalevski
+"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Run a command in a running container
+baffa@LAPTOP-LLN9LO7E:~$ docker exec -it alpine
+"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Run a command in a running container
+baffa@LAPTOP-LLN9LO7E:~$ docker exec -it
+"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Run a command in a running container
+baffa@LAPTOP-LLN9LO7E:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+baffa@LAPTOP-LLN9LO7E:~$ docker run -it -d fd312adc88e0
+2f4b8ba068968069f4fcba18067ee718df1aaccfa50969061310f4504317efa0
+baffa@LAPTOP-LLN9LO7E:~$ docker ps
+CONTAINER ID   IMAGE          COMMAND                 CREATED         STATUS         PORTS     NAMES
+2f4b8ba06896   fd312adc88e0   "/usr/src/app/server"   4 seconds ago   Up 3 seconds             ecstatic_sutherland
+baffa@LAPTOP-LLN9LO7E:~$ docker exec -it ecstatic_sutherland
+"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Run a command in a running container
+baffa@LAPTOP-LLN9LO7E:~$ docker ps
+CONTAINER ID   IMAGE          COMMAND                 CREATED              STATUS              PORTS     NAMES
+2f4b8ba06896   fd312adc88e0   "/usr/src/app/server"   About a minute ago   Up About a minute             ecstatic_sutherland
+baffa@LAPTOP-LLN9LO7E:~$ docker exec -it ecstatic_sutherland sh
+/usr/src/app # tail -f ./text.log
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-08-20 02:12:46 +0000 UTC
+2021-08-20 02:12:48 +0000 UTC
+2021-08-20 02:12:50 +0000 UTC
+2021-08-20 02:12:52 +0000 UTC
+2021-08-20 02:12:54 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-08-20 02:12:56 +0000 UTC
+2021-08-20 02:12:58 +0000 UTC
+2021-08-20 02:13:00 +0000 UTC
+2021-08-20 02:13:02 +0000 UTC
+2021-08-20 02:13:04 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-08-20 02:13:06 +0000 UTC
+^C
+/usr/src/app # exit
+baffa@LAPTOP-LLN9LO7E:~$
