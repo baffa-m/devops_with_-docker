@@ -1,1 +1,12 @@
-
+baffa@LAPTOP-LLN9LO7E:~$ docker run -d -it --name test devopsdockeruh/simple-web-service:ubuntu
+32b0003ac92851ebc4a7039ed818c124f3819e904e9d2966b04b56ae78418805
+baffa@LAPTOP-LLN9LO7E:~$ docker ps
+CONTAINER ID   IMAGE                                      COMMAND                 CREATED         STATUS         PORTS     NAMES
+32b0003ac928   devopsdockeruh/simple-web-service:ubuntu   "/usr/src/app/server"   6 seconds ago   Up 5 seconds             test
+baffa@LAPTOP-LLN9LO7E:~$ docker exec -it test bash
+root@32b0003ac928:/usr/src/app# tail -f ./text.log
+2021-08-20 00:48:55 +0000 UTC
+2021-08-20 00:48:57 +0000 UTC
+2021-08-20 00:48:59 +0000 UTC
+2021-08-20 00:49:01 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
