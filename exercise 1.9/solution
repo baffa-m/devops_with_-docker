@@ -1,1 +1,18 @@
 
+baffa@LAPTOP-LLN9LO7E:/mnt/c/Users/ahmad/Desktop/Docker$ docker run -v "$(pwd):/mydir" devopsdockeruh/simple-web-service
+Starting log output
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+^Cbaffa@LAPTOP-LLN9LO7E:/mnt/c/Users/ahmad/Desktop/Docker$
