@@ -1,1 +1,6 @@
 
+baffa@LAPTOP-LLN9LO7E:/mnt/c/Users/ahmad/Desktop/Docker$ docker run --network="host" -d -p 8080:5000 web-server
+WARNING: Published ports are discarded when using host network mode
+c3e9ebd00d22763c28af618413bf86ef35c151b16a36489da16e95a10eff426c
+baffa@LAPTOP-LLN9LO7E:/mnt/c/Users/ahmad/Desktop/Docker$ curl 127.0.0.1:8080
+{"message":"You connected to the following path: /","path":"/"}baffa@LAPTOP-LLN9LO7E:/mnt/c/Users/ahmad/Desktop/Docker$ 
