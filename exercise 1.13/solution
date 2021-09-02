@@ -1,1 +1,197 @@
 
+baffa@LAPTOP-LLN9LO7E:/mnt/c/Users/ahmad/Desktop/Docker/material-applications-main/material-applications-main/example-backend$ docker build . -t example-backend
+Sending build context to Docker daemon   42.5kB
+Step 1/6 : FROM ubuntu:latest
+ ---> fb52e22af1b0
+Step 2/6 : WORKDIR /usr/src/app
+ ---> Using cache
+ ---> ff216b545573
+Step 3/6 : COPY . .
+ ---> Using cache
+ ---> b1349b8f6687
+Step 4/6 : RUN apt-get update && apt install -y golang
+ ---> Running in c91a828606e7
+Get:1 http://archive.ubuntu.com/ubuntu focal InRelease [265 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:3 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease [101 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal/restricted amd64 Packages [33.4 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal/universe amd64 Packages [11.3 MB]
+Get:7 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [488 kB]
+Get:8 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [790 kB]
+Get:9 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [30.1 kB]
+Get:10 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [1037 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal/universe amd64 Packages [11.3 MB]
+Get:6 http://archive.ubuntu.com/ubuntu focal/universe amd64 Packages [11.3 MB]
+Get:11 http://archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [177 kB]
+Ign:12 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages
+Ign:13 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages
+Ign:14 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages
+Ign:15 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages
+Ign:16 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages
+Ign:17 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages
+Ign:18 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages
+Ign:12 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages
+Ign:13 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages
+Ign:14 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages
+Ign:15 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages
+Ign:16 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages
+Ign:17 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages
+Ign:18 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages
+Ign:12 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages
+Ign:13 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages
+Ign:14 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages
+Ign:15 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages
+Ign:16 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages
+Ign:17 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages
+Ign:18 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages
+Ign:12 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages
+Ign:13 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages
+Ign:14 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages
+Ign:15 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages
+Ign:16 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages
+Ign:17 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages
+Ign:18 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages
+Ign:12 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages
+Ign:13 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages
+Ign:14 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages
+Ign:15 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages
+Ign:16 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages
+Ign:17 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages
+Ign:18 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages
+Err:12 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages
+  Could not connect to archive.ubuntu.com:80 (91.189.88.152), connection timed out Could not connect to archive.ubuntu.com:80 (91.189.88.142), connection timed out [IP: 91.189.88.142 80]
+Err:13 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages
+  Unable to connect to archive.ubuntu.com:http: [IP: 91.189.88.142 80]
+Err:14 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages
+  Unable to connect to archive.ubuntu.com:http: [IP: 91.189.88.142 80]
+Err:15 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages
+  Unable to connect to archive.ubuntu.com:http: [IP: 91.189.88.142 80]
+Err:16 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages
+  Unable to connect to archive.ubuntu.com:http: [IP: 91.189.88.142 80]
+Err:17 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages
+  Unable to connect to archive.ubuntu.com:http: [IP: 91.189.88.142 80]
+Err:18 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages
+  Unable to connect to archive.ubuntu.com:http: [IP: 91.189.88.142 80]
+Fetched 3801 kB in 1min 23s (45.9 kB/s)
+Reading package lists...
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/focal/main/binary-amd64/Packages  Could not connect to archive.ubuntu.com:80 (91.189.88.152), connection timed out Could not connect to archive.ubuntu.com:80 (91.189.88.142), connection timed out [IP: 91.189.88.142 80]
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/focal-updates/restricted/binary-amd64/Packages  Unable to connect to archive.ubuntu.com:http: [IP: 91.189.88.142 80]
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/focal-updates/main/binary-amd64/Packages  Unable to connect to archive.ubuntu.com:http: [IP: 91.189.88.142 80]
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/focal-updates/universe/binary-amd64/Packages  Unable to connect to archive.ubuntu.com:http: [IP: 91.189.88.142 80]
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/focal-updates/multiverse/binary-amd64/Packages  Unable to connect to archive.ubuntu.com:http: [IP: 91.189.88.142 80]
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/focal-backports/universe/binary-amd64/Packages  Unable to connect to archive.ubuntu.com:http: [IP: 91.189.88.142 80]
+W: Failed to fetch http://archive.ubuntu.com/ubuntu/dists/focal-backports/main/binary-amd64/Packages  Unable to connect to archive.ubuntu.com:http: [IP: 91.189.88.142 80]
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+E: Unable to locate package golang
+The command '/bin/sh -c apt-get update && apt install -y golang' returned a non-zero code: 100
+baffa@LAPTOP-LLN9LO7E:/mnt/c/Users/ahmad/Desktop/Docker/material-applications-main/material-applications-main/example-backend$ docker build . -t example-backend
+Sending build context to Docker daemon   42.5kB
+Step 1/6 : FROM ubuntu:latest
+ ---> fb52e22af1b0
+Step 2/6 : WORKDIR /usr/src/app
+ ---> Using cache
+ ---> ff216b545573
+Step 3/6 : COPY . .
+ ---> Using cache
+ ---> b1349b8f6687
+Step 4/6 : RUN apt-get update && [golang](https://golang.org/doc/install) 1.16
+ ---> Running in 1017e36f9c10
+/bin/sh: 1: Syntax error: word unexpected (expecting ")")
+The command '/bin/sh -c apt-get update && [golang](https://golang.org/doc/install) 1.16' returned a non-zero code: 2
+baffa@LAPTOP-LLN9LO7E:/mnt/c/Users/ahmad/Desktop/Docker/material-applications-main/material-applications-main/example-backend$ docker build . -t example-backend
+Sending build context to Docker daemon   42.5kB
+Step 1/6 : FROM [golang](https://golang.org/doc/install):1.16
+invalid reference format
+baffa@LAPTOP-LLN9LO7E:/mnt/c/Users/ahmad/Desktop/Docker/material-applications-main/material-applications-main/example-backend$ docker build . -t example-backend
+Sending build context to Docker daemon   42.5kB
+Step 1/6 : FROM golang:1.16
+1.16: Pulling from library/golang
+4c25b3090c26: Already exists
+1acf565088aa: Already exists
+b95c0dd0dc0d: Already exists
+5cf06daf6561: Already exists
+fcb5bda771c7: Pull complete
+590c045676bf: Pull complete
+f18ae86611d3: Pull complete
+Digest: sha256:19ad7b8a92ca1e60a648e4a27d45c1e0ad945139f780dbd4865521e5a802d597
+Status: Downloaded newer image for golang:1.16
+ ---> f9038ebacb98
+Step 2/6 : WORKDIR /usr/src/app
+ ---> Running in 6c925a9d8cc6
+Removing intermediate container 6c925a9d8cc6
+ ---> 62d0bebd18fb
+Step 3/6 : COPY . .
+ ---> cc1a0146ff8d
+Step 4/6 : RUN apt-get update && [golang](https://golang.org/doc/install) 1.16
+ ---> Running in fba709af012a
+/bin/sh: 1: Syntax error: word unexpected (expecting ")")
+The command '/bin/sh -c apt-get update && [golang](https://golang.org/doc/install) 1.16' returned a non-zero code: 2
+baffa@LAPTOP-LLN9LO7E:/mnt/c/Users/ahmad/Desktop/Docker/material-applications-main/material-applications-main/example-backend$ docker build . -t example-backend
+Sending build context to Docker daemon   42.5kB
+Step 1/5 : FROM golang:1.16
+ ---> f9038ebacb98
+Step 2/5 : WORKDIR /usr/src/app
+ ---> Using cache
+ ---> 62d0bebd18fb
+Step 3/5 : COPY . .
+ ---> Using cache
+ ---> cc1a0146ff8d
+Step 4/5 : RUN go build
+ ---> Running in f4b107054c11
+go: downloading github.com/gin-gonic/gin v1.6.3
+go: downloading github.com/gin-contrib/cors v1.3.1
+go: downloading github.com/go-pg/pg/v10 v10.7.3
+go: downloading github.com/go-redis/redis/v8 v8.4.2
+go: downloading github.com/gin-contrib/sse v0.1.0
+go: downloading github.com/ugorji/go v1.1.7
+go: downloading gopkg.in/yaml.v2 v2.3.0
+go: downloading github.com/mattn/go-isatty v0.0.12
+go: downloading github.com/golang/protobuf v1.4.3
+go: downloading github.com/go-playground/validator/v10 v10.2.0
+go: downloading github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f
+go: downloading github.com/cespare/xxhash/v2 v2.1.1
+go: downloading go.opentelemetry.io/otel v0.14.0
+go: downloading mellium.im/sasl v0.2.1
+go: downloading github.com/ugorji/go/codec v1.1.7
+go: downloading github.com/go-pg/zerochecker v0.2.0
+go: downloading github.com/jinzhu/inflection v1.0.0
+go: downloading github.com/vmihailenco/msgpack/v5 v5.0.0
+go: downloading github.com/vmihailenco/tagparser v0.1.2
+go: downloading github.com/tmthrgd/go-hex v0.0.0-20190904060850-447a3041c3bc
+go: downloading github.com/vmihailenco/bufpool v0.1.11
+go: downloading golang.org/x/sys v0.0.0-20201119102817-f84b799fce68
+go: downloading google.golang.org/protobuf v1.25.0
+go: downloading golang.org/x/crypto v0.0.0-20201117144127-c1f2f97bffc9
+go: downloading github.com/go-playground/universal-translator v0.17.0
+go: downloading github.com/leodido/go-urn v1.2.0
+go: downloading github.com/go-playground/locales v0.13.0
+Removing intermediate container f4b107054c11
+ ---> 02370e6cdc2a
+Step 5/5 : CMD ./server
+ ---> Running in c0d34bb7da71
+Removing intermediate container c0d34bb7da71
+ ---> 50869ea56b0a
+Successfully built 50869ea56b0a
+Successfully tagged example-backend:latest
+baffa@LAPTOP-LLN9LO7E:/mnt/c/Users/ahmad/Desktop/Docker/material-applications-main/material-applications-main/example-backend$ docker run --network='host' example-backend
+[Ex 2.4+] REDIS_HOST env was not passed so redis connection is not initialized
+[Ex 2.6+] POSTGRES_HOST env was not passed so postgres connection is not initialized
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:   export GIN_MODE=release
+ - using code:  gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> server/router.pingpong (4 handlers)
+[GIN-debug] GET    /messages                 --> server/controller.GetMessages (4 handlers)
+[GIN-debug] POST   /messages                 --> server/controller.CreateMessage (4 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2021/09/02 - 03:44:53 | 200 |       139.5µs |             ::1 | GET      "/ping"
+[GIN] 2021/09/02 - 03:44:54 | 404 |        20.4µs |             ::1 | GET      "/favicon.ico"
