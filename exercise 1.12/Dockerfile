@@ -1,4 +1,3 @@
-
 FROM ubuntu:latest
 
 EXPOSE 5000
@@ -16,7 +15,8 @@ RUN npm install
 
 RUN npm run build
 
-RUN npm install -g serve && serve -s -l 5000 build
+RUN npm install -g serve
+ENV serve -s -l 5000 build
 
 CMD npm start
 
